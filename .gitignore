@@ -1,32 +1,15 @@
-# =========================
-# Secrets
-# =========================
+# env
 .env
-.env.*
-!.env.example
-
-# =========================
-# Virtual Environment
-# =========================
 .venv/
 venv/
 
-# =========================
-# Python Cache
-# =========================
+# python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
-# =========================
-# VS Code / IDE
-# =========================
-.vscode/
-.idea/
+# streamlit
+.streamlit/secrets.toml
 
-# =========================
-# OS files
-# =========================
+# OS
 .DS_Store
 Thumbs.db
