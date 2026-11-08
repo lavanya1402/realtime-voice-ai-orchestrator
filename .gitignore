@@ -13,3 +13,5 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+.ruff_cache/
+.pytest_cache/

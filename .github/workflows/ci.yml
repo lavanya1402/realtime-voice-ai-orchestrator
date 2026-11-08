@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install checkers
+        run: pip install ruff==0.16.9
+      - name: Lint
+        run: ruff check .
+      - name: Compile all Python files
+        run: python -m compileall -q .
+      - name: Tests
+        run: |
+          pip install pytest
+          cd backend && python -m pytest -q tests
